@@ -37,7 +37,7 @@ export const CustomFileUpload = styled.label`
     font-size: 25px;
   }
 
-  span {
+  label {
     margin-left: 10px;
    }
 `;
@@ -52,7 +52,7 @@ export const TextInputWrapper = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); 
   border: 1px solid #555; 
-  margin-top: 20px; // aqui
+  margin-top: 20px;
 `;
 
 export const TextInput = styled.textarea`
@@ -224,7 +224,7 @@ export const ResetButton = styled.button`
     }
 `;
 
-export const Title = styled.div`
+export const Title = styled.label`
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 18px;
   margin-bottom: 10px;

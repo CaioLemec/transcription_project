@@ -112,8 +112,8 @@ const App: React.FC = () => {
                     <S.CustomFileUpload>
                         {file ? file.name :
                             (<>
-                                <S.FileInput type="file" ref={inputRef} accept=".mp3" onChange={onChangeFile} />
-                                <PiUploadSimple /><span>Escolha um arquivo...</span>
+                                <S.FileInput id="file_input_" type="file" ref={inputRef} accept=".mp3" onChange={onChangeFile} />
+                                <PiUploadSimple /><label htmlFor='file_input_'>Escolha um arquivo...</label>
                             </>)}
                     </S.CustomFileUpload>
                     <ToastContainer
@@ -130,6 +130,7 @@ const App: React.FC = () => {
                     />
                     <S.TextInputWrapper>
                         <S.TextInput
+                            id="prompt_input_"
                             value={userPrompt}
                             onChange={(e) => setUserPrompt(e.target.value)}
                             placeholder="Digite o prompt..."
@@ -141,21 +142,27 @@ const App: React.FC = () => {
         ) : (
             <StyleSheetManager shouldForwardProp={(prop) => prop !== 'isLoading'}>
                 <S.Wrapper>
-                    <S.Title>Transcrição: </S.Title>
-                    <S.TextWrapper
-                        value={transcription?.toString()}
-                        onChange={(e) => setTranscription(e.target.value)}
-                    >
-                        {transcription && transcription}
-                    </S.TextWrapper>
-                    <S.Title>Resposta: </S.Title>
-                    <S.TextWrapper
-                        isLoading={loading}
-                        value={apiResponse?.toString()}
-                        onChange={(e) => setApiResponse(e.target.value)}
-                    >
-                    </S.TextWrapper>
-                    <S.ResetButton onClick={handleReset}>Voltar</S.ResetButton>
+                    <>
+                        <S.Title htmlFor='transcription_input_'>Transcrição: </S.Title>
+                        <S.TextWrapper
+                            id="transcription_input_"
+                            value={transcription?.toString()}
+                            onChange={(e) => setTranscription(e.target.value)}
+                        >
+                            {transcription && transcription}
+                        </S.TextWrapper>
+                    </>
+                    <>
+                        <S.Title htmlFor='response_input_'>Resposta: </S.Title>
+                        <S.TextWrapper
+                            id="response_input_"
+                            isLoading={loading}
+                            value={apiResponse?.toString()}
+                            onChange={(e) => setApiResponse(e.target.value)}
+                        >
+                        </S.TextWrapper>
+                        <S.ResetButton onClick={handleReset}>Voltar</S.ResetButton>
+                    </>
                 </S.Wrapper>
             </StyleSheetManager>
         )
