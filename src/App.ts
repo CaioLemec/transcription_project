@@ -5,6 +5,10 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+
+@media (max-width: 800px) {
+    padding: 5px;
+  }
 `;
 
 export const FileInput = styled.input`
@@ -14,6 +18,11 @@ export const FileInput = styled.input`
 export const Logotype = styled.img`
   margin-bottom: 20px;
   width: 400px;
+
+  @media (max-width: 800px) {
+    width: 70%; 
+    margin-bottom: 10px;
+  }
 `;
 
 export const CustomFileUpload = styled.label`
@@ -40,6 +49,19 @@ export const CustomFileUpload = styled.label`
   label {
     margin-left: 10px;
    }
+
+   @media (max-width: 800px) {
+    width: 50%; 
+    font-size: 75%;
+
+    label {
+    margin-left: 5px;
+   }
+
+    svg {
+      font-size: 18px;
+  }
+  }
 `;
 
 export const TextInputWrapper = styled.div`
@@ -53,6 +75,20 @@ export const TextInputWrapper = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); 
   border: 1px solid #555; 
   margin-top: 20px;
+  font-size: 15px;
+
+  @media (max-width: 800px) {
+    width: 50%; 
+    font-size: 75%;
+
+    label {
+    margin-left: 5px;
+   }
+
+    svg {
+      font-size: 18px;
+  }
+  }
 `;
 
 export const TextInput = styled.textarea`
@@ -72,6 +108,12 @@ export const TextInput = styled.textarea`
   &:active {
     border: node;
     }
+
+    @media (max-width: 800px) {
+    font-size: 75%;
+    margin-right: 20px;
+    height: 100px;
+  }
 `;
 
 const rotateAnimation = keyframes`
@@ -129,6 +171,10 @@ export const StartButton = styled.button<{ isLoading?: boolean }>`
     }
 
     `}
+
+    @media (max-width: 800px) {
+    margin-right: 5px;
+    }
 `;
 
 const changeColor = keyframes`
@@ -189,6 +235,12 @@ export const TextWrapper = styled.textarea<{ isLoading?: boolean }>`
     css`
       animation: ${changeColor} 2s linear infinite;
     `}
+
+    @media (max-width: 800px) {
+    width: 300px;
+    height: 150px; 
+    font-size: 10px; 
+  }
 `;
 
 export const ResetButton = styled.button`
@@ -222,6 +274,19 @@ export const ResetButton = styled.button`
       transform: scale(100%);
   }
     }
+
+    @media (max-width: 800px) {
+      width: 320px;
+    font-size: 75%;
+
+    label {
+    margin-left: 5px;
+   }
+
+    svg {
+      font-size: 18px;
+  }
+  }
 `;
 
 export const Title = styled.label`
@@ -231,4 +296,18 @@ export const Title = styled.label`
   color: #fff; 
   text-align: left;
   width: 100%;
+  font-weight: bold;
+
+  @media (max-width: 800px) {
+
+    font-size: 75%;
+
+    label {
+    margin-left: 5px;
+   }
+
+    svg {
+      font-size: 18px;
+  }
+  }
 `;
