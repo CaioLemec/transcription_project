@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import axios from 'axios'
-import { PiPaperPlaneRightFill } from 'react-icons/pi'
+import { PiPaperPlaneRightFill, PiUploadSimple, PiCircleDashed } from 'react-icons/pi'
 import logotype from './assets/logotype.svg'
 import { StyleSheetManager } from 'styled-components';
 import * as S from './App.ts'
@@ -46,7 +46,11 @@ const App: React.FC = () => {
                     model: ENGINE_MODEL,
                     "messages": [{
                         "role": "user", "content": `
-                    Transcrição: ${transcriptionText}; Com base na transcrição, aplique as instruções a seguir; Instruções: ${userPromptText};`,
+                        Eu acabei de converter um áudio em texto e o resultado foi o seguinte: "${transcriptionText}".
+                        Agora, com base nessa transcrição, gostaria que você realizasse as seguintes tarefas:
+                        ${userPromptText};
+                        Lembre-se de fornecer resultados de alta qualidade e, sem erros ortográficos e se possível respire antes de responder.
+                    `
                     }],
                 },
                 {
@@ -61,6 +65,8 @@ const App: React.FC = () => {
         } catch (error) {
             console.error(error);
             setLoading(false)
+            toast.warn("Um erro inesperado aconteceu...");
+            handleReset()
         }
     };
 
@@ -100,45 +106,49 @@ const App: React.FC = () => {
 
     return (
         !transcription && !apiResponse ? (
-            <S.Wrapper>
-                <S.Logotype src={logotype} className="logo react" alt="React logo" />
-                <S.CustomFileUpload>
-                    {file ? file.name :
-                        (<>
-                            <S.FileInput type="file" ref={inputRef} accept=".mp3" onChange={onChangeFile} />                            
-                            Escolha um arquivo...
-                        </>)}
-                </S.CustomFileUpload>
-                <ToastContainer 
-                    position="top-center"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="dark"
-                />
-                <S.TextInputWrapper>
-                    <S.TextInput
-                        value={userPrompt}
-                        onChange={(e) => setUserPrompt(e.target.value)}
-                        placeholder="Digite o prompt..."
+            <StyleSheetManager shouldForwardProp={(prop) => prop !== 'isLoading'}>
+                <S.Wrapper>
+                    <S.Logotype src={logotype} className="logo react" alt="React logo" />
+                    <S.CustomFileUpload>
+                        {file ? file.name :
+                            (<>
+                                <S.FileInput type="file" ref={inputRef} accept=".mp3" onChange={onChangeFile} />
+                                <PiUploadSimple /><span>Escolha um arquivo...</span>
+                            </>)}
+                    </S.CustomFileUpload>
+                    <ToastContainer
+                        position="top-center"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
                     />
-                    <S.StartButton disabled={!file || userPrompt === '' || loading} onClick={handleButtonClick}><PiPaperPlaneRightFill /></S.StartButton>
-                </S.TextInputWrapper>
-            </S.Wrapper>
+                    <S.TextInputWrapper>
+                        <S.TextInput
+                            value={userPrompt}
+                            onChange={(e) => setUserPrompt(e.target.value)}
+                            placeholder="Digite o prompt..."
+                        />
+                        <S.StartButton isLoading={loading} disabled={!file || userPrompt === '' || loading} onClick={handleButtonClick}>{loading ? <PiCircleDashed /> : <PiPaperPlaneRightFill />}</S.StartButton>
+                    </S.TextInputWrapper>
+                </S.Wrapper>
+            </StyleSheetManager>
         ) : (
             <StyleSheetManager shouldForwardProp={(prop) => prop !== 'isLoading'}>
                 <S.Wrapper>
+                    <S.Title>Transcrição: </S.Title>
                     <S.TextWrapper
                         value={transcription?.toString()}
                         onChange={(e) => setTranscription(e.target.value)}
                     >
                         {transcription && transcription}
                     </S.TextWrapper>
+                    <S.Title>Resposta: </S.Title>
                     <S.TextWrapper
                         isLoading={loading}
                         value={apiResponse?.toString()}

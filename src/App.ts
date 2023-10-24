@@ -31,6 +31,15 @@ export const CustomFileUpload = styled.label`
   font-weight: bold;
   text-align: center;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  font-size: 15px;
+  
+  svg {
+    font-size: 25px;
+  }
+
+  span {
+    margin-left: 10px;
+   }
 `;
 
 export const TextInputWrapper = styled.div`
@@ -65,7 +74,17 @@ export const TextInput = styled.textarea`
     }
 `;
 
-export const StartButton = styled.button`
+const rotateAnimation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+
+export const StartButton = styled.button<{ isLoading?: boolean }>`
   padding: 6px 6px;
   border-radius: 5px;
   background-color: #8257e5;
@@ -90,16 +109,26 @@ export const StartButton = styled.button`
     &:disabled {
     background-color: transparent;
     color: #555;
-  }
-
+    }
   }
 
   &:active {
     transform: scale(90%);
     &:disabled {
       transform: scale(100%);
-  }
     }
+  }
+
+  ${({ isLoading }) =>
+    isLoading &&
+    css`
+      svg {
+    font-size: 25px;
+    color: #9466ff;
+    animation: ${rotateAnimation} 1s linear infinite;
+    }
+
+    `}
 `;
 
 const changeColor = keyframes`
@@ -160,7 +189,6 @@ export const TextWrapper = styled.textarea<{ isLoading?: boolean }>`
     css`
       animation: ${changeColor} 2s linear infinite;
     `}
-
 `;
 
 export const ResetButton = styled.button`
@@ -194,4 +222,13 @@ export const ResetButton = styled.button`
       transform: scale(100%);
   }
     }
+`;
+
+export const Title = styled.div`
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff; 
+  text-align: left;
+  width: 100%;
 `;
