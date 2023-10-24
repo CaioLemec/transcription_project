@@ -4,6 +4,8 @@ import { PiPaperPlaneRightFill } from 'react-icons/pi'
 import logotype from './assets/logotype.svg'
 import { StyleSheetManager } from 'styled-components';
 import * as S from './App.ts'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY
 const WHISPER_MODEL = 'whisper-1'
@@ -24,7 +26,14 @@ const App: React.FC = () => {
 
     const onChangeFile = () => {
         if (inputRef.current?.files?.length) {
-            setFile(inputRef.current.files[0]);
+            const selectedFile = inputRef.current.files[0];
+            const allowedExtensions = [".mp3"];
+
+            if (allowedExtensions.some(ext => selectedFile.name.endsWith(ext))) {
+                setFile(selectedFile);
+            } else {
+                toast.warn("Somente arquivos .mp3!");
+            }
         }
     };
 
@@ -35,8 +44,10 @@ const App: React.FC = () => {
                 {
                     ...API_OPTIONS,
                     model: ENGINE_MODEL,
-                    "messages": [{ "role": "user", "content": `
-                    Transcrição: ${transcriptionText}; Com base na transcrição, aplique as instruções a seguir; Instruções: ${userPromptText};`, }],
+                    "messages": [{
+                        "role": "user", "content": `
+                    Transcrição: ${transcriptionText}; Com base na transcrição, aplique as instruções a seguir; Instruções: ${userPromptText};`,
+                    }],
                 },
                 {
                     headers: {
@@ -94,10 +105,22 @@ const App: React.FC = () => {
                 <S.CustomFileUpload>
                     {file ? file.name :
                         (<>
-                            <S.FileInput type="file" ref={inputRef} accept=".mp3" onChange={onChangeFile} />
+                            <S.FileInput type="file" ref={inputRef} accept=".mp3" onChange={onChangeFile} />                            
                             Escolha um arquivo...
                         </>)}
                 </S.CustomFileUpload>
+                <ToastContainer 
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                />
                 <S.TextInputWrapper>
                     <S.TextInput
                         value={userPrompt}
