@@ -1,5 +1,5 @@
 <h1 align="center">
-    Transcription Project
+    <img alt="logo" title="Transcription Project" src="src/assets/logotype.svg" width="55%" />
 </h1>
 <br>
 <p align="center">
@@ -7,9 +7,6 @@
   <a href="#octocat-environment"><img src="https://img.shields.io/static/v1?label=&message=Environment&color=f48120&style=for-the-badge&logo=visual-studio-code"/></a>&nbsp;
   <a href="#bookmark_tabs-license"><img src="https://img.shields.io/static/v1?label=&message=License&color=f48120&style=for-the-badge&logo=LibreOffice"/></a>&nbsp;
 </p>
-
-<br>
-<hr>
 
 ## :desktop_computer: Project
 
@@ -20,6 +17,10 @@ The project is simple, but it brought great comfort and productivity to my frien
 >`Alert 1:` Due to some features in the styling, it is not recommended to use IE 6-8 as a browser when using this application. <br>
 `Alert 2:` The responsive version is still under development.
 
+## :nail_care: Layout
+<p align="center">
+<img src="src/assets/transcription_project_example.mp4" width="85%" />
+</p>
 
 ## :octocat: Environment
 
