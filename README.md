@@ -18,7 +18,7 @@ The project is simple, but it brought great comfort and productivity to my frien
 `Alert 2:` The responsive version is still under development.
 
 ## :nail_care: Layout
-[![demo](/home/caio/projects/transcription_project/src/assets/transcription_project_example.mp4.jpg)](/home/caio/projects/transcription_project/src/assets/transcription_project_example.mp4 "demo")
+[![demo](./src/assets/transcription_project_example.mp4.jpg)](./src/assets/transcription_project_example.mp4 "demo")
 
 ## :octocat: Environment
 
