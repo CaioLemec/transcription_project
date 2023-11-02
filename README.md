@@ -38,7 +38,7 @@ https://github.com/CaioLemec/transcription_project.git
 ```bash
  yarn
  ```
-3. Adicione suas chaves api da openAI em um arquivo .env.local
+3. Add your openAI API keys to a .env.local file.
 
 <hr>
 
