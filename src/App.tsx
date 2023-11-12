@@ -17,7 +17,7 @@ const ENGINE_MODEL = "gpt-4";
 
 const API_OPTIONS = {
   temperature: 0.9,
-  max_tokens: 20000,
+  max_tokens: 5000,
 };
 
 const App: React.FC = () => {
