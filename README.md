@@ -4,11 +4,10 @@
 <br>
 <p align="center">
   <a href="#project"><img src="https://img.shields.io/static/v1?label=&message=Project&color=8257e5&style=for-the-badge&logo=Next.js"/></a>&nbsp;
+  <a href="#demo"><img src="https://img.shields.io/static/v1?label=&message=Demo&color=8257e5&style=for-the-badge&logo=YouTube"/></a>&nbsp;
   <a href="#environment"><img src="https://img.shields.io/static/v1?label=&message=Environment&color=8257e5&style=for-the-badge&logo=visual-studio-code"/></a>&nbsp;
   <a href="#license"><img src="https://img.shields.io/static/v1?label=&message=License&color=8257e5&style=for-the-badge&logo=LibreOffice"/></a>&nbsp;
-  <a href="#demo"><img src="https://img.shields.io/static/v1?label=&message=Demo&color=8257e5&style=for-the-badge&logo=YouTube"/></a>&nbsp;
-  <a href="#version"><img src="https://img.shields.io/static/v1?label=&message=Version&color=8257e5&style=for-the-badge&logo=Git"/></a>&nbsp;
-  <a href="#build-status"><img src="https://img.shields.io/static/v1?label=&message=Build&color=8257e5&style=for-the-badge&logo=Travis-CI"/></a>&nbsp;
+
 </p>
 
 ## :desktop_computer: Project Overview
