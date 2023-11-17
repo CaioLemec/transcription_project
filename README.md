@@ -3,12 +3,12 @@
 </h1>
 <br>
 <p align="center">
-  <a href="#project"><img src="https://img.shields.io/static/v1?label=&message=Project&color=f48120&style=for-the-badge&logo=Next.js"/></a>&nbsp;
-  <a href="#environment"><img src="https://img.shields.io/static/v1?label=&message=Environment&color=f48120&style=for-the-badge&logo=visual-studio-code"/></a>&nbsp;
-  <a href="#license"><img src="https://img.shields.io/static/v1?label=&message=License&color=f48120&style=for-the-badge&logo=LibreOffice"/></a>&nbsp;
-  <a href="#demo"><img src="https://img.shields.io/static/v1?label=&message=Demo&color=f48120&style=for-the-badge&logo=YouTube"/></a>&nbsp;
-  <a href="#version"><img src="https://img.shields.io/static/v1?label=&message=Version&color=f48120&style=for-the-badge&logo=Git"/></a>&nbsp;
-  <a href="#build-status"><img src="https://img.shields.io/static/v1?label=&message=Build&color=f48120&style=for-the-badge&logo=Travis-CI"/></a>&nbsp;
+  <a href="#project"><img src="https://img.shields.io/static/v1?label=&message=Project&color=8257e5&style=for-the-badge&logo=Next.js"/></a>&nbsp;
+  <a href="#environment"><img src="https://img.shields.io/static/v1?label=&message=Environment&color=8257e5&style=for-the-badge&logo=visual-studio-code"/></a>&nbsp;
+  <a href="#license"><img src="https://img.shields.io/static/v1?label=&message=License&color=8257e5&style=for-the-badge&logo=LibreOffice"/></a>&nbsp;
+  <a href="#demo"><img src="https://img.shields.io/static/v1?label=&message=Demo&color=8257e5&style=for-the-badge&logo=YouTube"/></a>&nbsp;
+  <a href="#version"><img src="https://img.shields.io/static/v1?label=&message=Version&color=8257e5&style=for-the-badge&logo=Git"/></a>&nbsp;
+  <a href="#build-status"><img src="https://img.shields.io/static/v1?label=&message=Build&color=8257e5&style=for-the-badge&logo=Travis-CI"/></a>&nbsp;
 </p>
 
 ## :desktop_computer: Project Overview
@@ -17,9 +17,9 @@ Welcome to the Transcription Project! This tool converts audio into MP3 format a
 
 >`Alert 1:` For optimal experience, it is advisable not to use IE 6-8 as a browser due to certain styling features.
 
-## :nail_care: Demo
+## :movie_camera: Demo
 
-Explore the project in action by watching [Demo Video](./src/assets/transcription_project_example.mp4)!
+Explore the project in action by watching [Demo Video](./src/assets/transcription_project_example.mp4).
 
 ## :octocat: Environment
 
@@ -66,7 +66,7 @@ Feel free to reach out for clarifications or feedback.
   <br>
   <em>Caio Lemec</em>
   <br>
-  <a href="mailto:caiolemec@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=E-mail&color=f48120&style=for-the-badge&logo=Gmail"/></a>
-  <a href="https://www.linkedin.com/in/caiolemec/"><img src="https://img.shields.io/static/v1?label=&message=LinkedIn&color=f48120&style=for-the-badge&logo=linkedin"/></a>
+  <a href="mailto:caiolemec@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=E-mail&color=8257e5&style=for-the-badge&logo=Gmail"/></a>
+  <a href="https://www.linkedin.com/in/caiolemec/"><img src="https://img.shields.io/static/v1?label=&message=LinkedIn&color=8257e5&style=for-the-badge&logo=linkedin"/></a>
   <br>
 </p>
